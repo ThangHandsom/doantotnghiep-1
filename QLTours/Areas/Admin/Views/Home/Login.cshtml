@@ -27,7 +27,6 @@
     <!--===============================================================================================-->
 </head>
 <body>
-
     <div class="limiter">
         <div class="container-login100">
             @if (ViewData["err"] != null)
@@ -43,16 +42,14 @@
                 </div>
             }
             <div class="wrap-login100">
-
                 <div class="login100-pic js-tilt" data-tilt>
                     <img src="~/DangNhap/images/img-01.png" alt="IMG">
                 </div>
 
                 <form asp-area="Admin" asp-controller="Home" asp-action="Login" method="post">
                     <span class="login100-form-title">
-                        Đăng Nhập Cho Admin
+                        Đăng Nhập Cho Quản Trị Viên
                     </span>
-
                     <div class="wrap-input100 validate-input" data-validate="Bạn chưa nhập số tài khoản">
                         <input asp-for="Username" class="input100 form-control" placeholder="Nhập tài khoản" required />
                         <span class="focus-input100"></span>
@@ -70,15 +67,12 @@
                         </span>
                         <span asp-validation-for="Password" class="text-danger"></span>
                     </div>
-
                     <div class="container-login100-form-btn">
                         <button type="submit" class="login100-form-btn">
                             Đăng nhập
                         </button>
                     </div>
-
                     <div asp-validation-summary="All" class="text-danger"></div>
-
                 </form>
             </div>
         </div>

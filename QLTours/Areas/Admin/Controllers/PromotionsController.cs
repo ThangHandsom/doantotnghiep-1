@@ -26,17 +26,15 @@ namespace QLTours.Controllers
                 return Problem("Entity set 'QuanLyTourContext.Promotion' is null.");
             }
 
-            var promotions = _context.Promotions.AsNoTracking(); // Không tracking để tối ưu hiệu suất.
-            var totalPromotions = await promotions.CountAsync(); // Tổng số quản lý.
-            var totalPages = (int)Math.Ceiling(totalPromotions / (double)pageSize); // Tính số trang.
+            var promotions = _context.Promotions.AsNoTracking(); 
+            var totalPromotions = await promotions.CountAsync(); 
+            var totalPages = (int)Math.Ceiling(totalPromotions / (double)pageSize); 
 
-            // Lấy dữ liệu cho trang hiện tại.
             var pagedManages = await promotions
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
                 .ToListAsync();
 
-            // Truyền thông tin phân trang qua ViewBag.
             ViewBag.CurrentPage = pageNumber;
             ViewBag.TotalPages = totalPages;
             ViewBag.TotalPromotions = totalPromotions;
@@ -95,7 +93,6 @@ namespace QLTours.Controllers
         {
             if (id != promotion.PromotionId)
             {
-                // Kiểm tra nếu id không khớp với PromotionId
                 return NotFound("Lỗi: ID không khớp.");
             }
 

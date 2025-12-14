@@ -29,11 +29,11 @@ public class VnPayLibrary
         var vnPayTranId = Convert.ToInt64(vnPay.GetResponseData("vnp_TransactionNo"));
         var vnpResponseCode = vnPay.GetResponseData("vnp_ResponseCode");
         var vnpSecureHash =
-            collection.FirstOrDefault(k => k.Key == "vnp_SecureHash").Value; //hash của dữ liệu trả về
+            collection.FirstOrDefault(k => k.Key == "vnp_SecureHash").Value; 
         var orderInfo = vnPay.GetResponseData("vnp_OrderInfo");
 
         var checkSignature =
-            vnPay.ValidateSignature(vnpSecureHash, hashSecret); //check Signature
+            vnPay.ValidateSignature(vnpSecureHash, hashSecret); 
 
         if (!checkSignature)
             return new PaymentResponseModel()
@@ -107,20 +107,20 @@ public class VnPayLibrary
 
         foreach (var (key, value) in _requestData.Where(kv => !string.IsNullOrEmpty(kv.Value)))
         {
+            // Dùng UrlEncode chuẩn
             data.Append(WebUtility.UrlEncode(key) + "=" + WebUtility.UrlEncode(value) + "&");
         }
 
-        var querystring = data.ToString();
+        var queryString = data.ToString();
 
-        baseUrl += "?" + querystring;
-        var signData = querystring;
-        if (signData.Length > 0)
+        if (queryString.Length > 0)
         {
-            signData = signData.Remove(data.Length - 1, 1);
+            queryString = queryString.Remove(queryString.Length - 1, 1);
         }
 
-        var vnpSecureHash = HmacSha512(vnpHashSecret, signData);
-        baseUrl += "vnp_SecureHash=" + vnpSecureHash;
+        var vnpSecureHash = HmacSha512(vnpHashSecret, queryString);
+
+        baseUrl += "?" + queryString + "&vnp_SecureHash=" + vnpSecureHash;
 
         return baseUrl;
     }
@@ -167,7 +167,6 @@ public class VnPayLibrary
             data.Append(WebUtility.UrlEncode(key) + "=" + WebUtility.UrlEncode(value) + "&");
         }
 
-        //remove last '&'
         if (data.Length > 0)
         {
             data.Remove(data.Length - 1, 1);

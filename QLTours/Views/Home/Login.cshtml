@@ -39,11 +39,12 @@
         justify-content: center;
     }
 
-        .register-form h2 {
-            font-size: 2em;
-            color: #4facfe;
-            margin-bottom: 20px;
+        .register-form label {
+            color: #0065F8;
             text-align: center;
+            font-size: 2.3em;
+            font-weight: bold;
+            margin-bottom: 30px;
         }
 
     .form-control {
@@ -51,7 +52,7 @@
         padding: 15px;
         margin-bottom: 15px;
         border: 1px solid #ddd;
-        border-radius: 8px;
+        border-radius: 10px;
         font-size: 1em;
         transition: border-color 0.3s ease;
     }
@@ -67,7 +68,7 @@
         background: #4facfe;
         color: #fff;
         border: none;
-        border-radius: 8px;
+        border-radius: 10px;
         font-size: 1em;
         font-weight: bold;
         cursor: pointer;
@@ -81,11 +82,11 @@
     .google-login-button a {
         display: block;
         text-align: center;
-        padding: 12px;
+        padding: 15px;
         margin-top: 10px;
         background-color: #db4437;
         color: white;
-        border-radius: 8px;
+        border-radius: 10px;
         font-size: 1em;
         font-weight: bold;
         text-decoration: none;
@@ -105,7 +106,7 @@
             color: #007bc2;
             text-decoration: none;
             margin: 0 10px;
-            font-size: 0.9em;
+            font-size: 1em;
         }
 
             .link-container a:hover {
@@ -121,7 +122,7 @@
     <div class="register-container">
         <div class="register-image"></div>
         <div class="register-form">
-            <h2>Đăng Nhập</h2>
+            <label>Đăng Nhập</label>
             <form asp-action="Login" method="post">
                 <div class="form-group">
                     <input asp-for="Email" placeholder="Email" class="form-control" />
@@ -131,13 +132,14 @@
                     <input asp-for="Password" placeholder="Mật khẩu" type="password" class="form-control" />
                     <span asp-validation-for="Password" class="text-dark"></span>
                 </div>
+
                 <button class="button2" type="submit">Đăng Nhập</button>
                 <div class="google-login-button">
                     <a href="@Url.Action("LoginWithGoogle", "Account")">Đăng nhập bằng Google</a>
                 </div>
                 <div class="link-container">
                     <a asp-controller="Account" asp-action="ForgotPassword">Quên mật khẩu?</a>
-                    <a asp-controller="Home" asp-action="Register">Đăng ký ngay !!</a>
+                    <a asp-controller="Home" asp-action="Register">Đăng ký ngay!</a>
                 </div>
                 <div asp-validation-summary="All" class="text-dark"></div>
             </form>

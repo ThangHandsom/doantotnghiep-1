@@ -19,6 +19,7 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "9.0.0-preview.1.24112.3",
           "MimeKit": "4.8.0",
           "NETCore.MailKit": "2.1.0",
+          "QRCoder": "1.7.0",
           "RestSharp": "112.1.0",
           "System.Text.Json": "9.0.0-preview.1.24080.9",
           "X.PagedList": "10.5.7",
@@ -1742,6 +1743,17 @@
           }
         }
       },
+      "QRCoder/1.7.0": {
+        "dependencies": {
+          "System.Drawing.Common": "7.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/QRCoder.dll": {
+            "assemblyVersion": "1.7.0.0",
+            "fileVersion": "1.7.0.0"
+          }
+        }
+      },
       "RestSharp/112.1.0": {
         "runtime": {
           "lib/net8.0/RestSharp.dll": {
@@ -3005,6 +3017,13 @@
       "sha512": "sha512-WBu15cdv1lqKkPKXDQOEmEzwKemwrczKYlc2jtuZgRYiZ8TG8F4QzPYiE0Q9eVIpMSk8Aky7mUephf19HjBPOw==",
       "path": "nuget.versioning/6.8.0",
       "hashPath": "nuget.versioning.6.8.0.nupkg.sha512"
+    },
+    "QRCoder/1.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6R3hQkayihGIDjp3F1nLRDBWG+nqahGyOY2+fH4Rll16Vad67oaUUfHkOiMWKiJFnGh+PIGDfUos+0R9m54O1g==",
+      "path": "qrcoder/1.7.0",
+      "hashPath": "qrcoder.1.7.0.nupkg.sha512"
     },
     "RestSharp/112.1.0": {
       "type": "package",

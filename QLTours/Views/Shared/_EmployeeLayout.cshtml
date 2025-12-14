@@ -28,7 +28,7 @@
                 <div class="logo logo-dark">
                     <a href="/employee">
                         <img style="width: 235px;" src="~/Adminassets/images/logo/anhdep.png" alt="Logo">
-                        <img class="logo-fold" src="~/Adminassets/images/logo/logo-fold.png" alt="Logo">
+                        <img class="logo-fold" src="~/DangNhap/images/icons/favicon.ico" alt="Logo">
                     </a>
                 </div>
 
@@ -109,7 +109,6 @@
             @await Html.PartialAsync("_SideNavPartialView")
             <!-- Password Change Form (Initially Hidden) -->
             <div class="container mt-4" id="passwordForm" style="display: none;">
-                <!-- Nút X để đóng form -->
                 <button type="button" class="btn-close" id="closeButton" style="position: absolute; top: 10px; right: 10px;"></button>
 
                 <h5>Đổi Mật Khẩu</h5>
@@ -135,11 +134,9 @@
             <!-- Side Nav END -->
             <!-- Page Container START -->
             <div class="page-container">
-                <!-- Content Wrapper START -->
                 <div class="main-content">
                     @RenderBody()
                 </div>
-                <!-- Content Wrapper END -->
             </div>
             <!-- Page Container END -->
         </div>
@@ -161,14 +158,13 @@
 
 </html>
 
-<script>
+<script>//thay đổi mật khẩu
     $(document).ready(function () {
-        // Toggle password change form visibility when Edit Profile is clicked
+        
         $('#editProfileBtn').on('click', function () {
-            $('#passwordForm').slideToggle(); // Use slideToggle for smooth opening/closing
+            $('#passwordForm').slideToggle(); 
         });
 
-        // Handle the password change form submission
         $('#changePasswordForm').on('submit', function (e) {
             e.preventDefault();
             $.ajax({
@@ -178,7 +174,7 @@
                 success: function (response) {
                     if (response.success) {
                         alert("Đổi mật khẩu thành công!");
-                        location.reload();  // Reload the page after successful password change
+                        location.reload(); 
                     } else {
                         alert(response.message);
                     }
@@ -189,9 +185,8 @@
             });
         });
 
-        // Close the form when the "X" button is clicked
         $('#closeButton').on('click', function () {
-            $('#passwordForm').hide(); // Close form
+            $('#passwordForm').hide(); 
         });
     });
 

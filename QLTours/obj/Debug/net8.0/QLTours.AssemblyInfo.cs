@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("QLTours")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5fc55b0d13d29bbc6dc2d6b78d6f4fb64729c12c")]
 [assembly: System.Reflection.AssemblyProductAttribute("QLTours")]
 [assembly: System.Reflection.AssemblyTitleAttribute("QLTours")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

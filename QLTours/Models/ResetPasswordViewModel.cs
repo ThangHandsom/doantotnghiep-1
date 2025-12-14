@@ -4,8 +4,8 @@ namespace QLTours.Models
 {
     public class ResetPasswordViewModel
     {
-        public string ResetCode { get; set; } // Mã reset
-        public string Email { get; set; } // Email người dùng
-        public string NewPassword { get; set; } // Mật khẩu mới
+        public string ResetCode { get; set; } 
+        public string Email { get; set; } 
+        public string NewPassword { get; set; } 
     }
 }

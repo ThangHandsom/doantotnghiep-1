@@ -1,13 +1,10 @@
 ﻿@{
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 
-    // Ép kiểu ViewBag.RevenueByQuarter về List<RevenueData>
     var revenueByQuarter = ViewBag.RevenueByQuarter as List<QLTours.Areas.Admin.Models.RevenueData>;
 
-    // Tính tổng doanh thu để tính phần trăm
     var totalRevenue = revenueByQuarter.Sum(x => x.TotalRevenue);
 
-    // Tính phần trăm doanh thu cho từng quý
     var revenuePercentages = revenueByQuarter.Select(x => (x.TotalRevenue / totalRevenue) * 100).ToList();
 }
 
@@ -28,10 +25,9 @@
 <script>
     var ctx = document.getElementById('revenuePieChart').getContext('2d');
 
-    // Chuyển đổi dữ liệu thành chuỗi JSON để sử dụng trong JavaScript
     var labels = @Html.Raw(Json.Serialize(revenueByQuarter.Select(x => x.Quarter)));
     var revenueData = @Html.Raw(Json.Serialize(revenueByQuarter.Select(x => x.TotalRevenue)));
-    var revenuePercentages = @Html.Raw(Json.Serialize(revenuePercentages)); // Phần trăm
+    var revenuePercentages = @Html.Raw(Json.Serialize(revenuePercentages));
 
     var data = {
         labels: labels,
@@ -74,8 +70,8 @@
                     weight: 'bold',
                     size: 16 
                 },
-                borderColor: '#fff',  // Đường viền trắng bao quanh chữ
-                borderWidth: 2,  // Độ dày đường viền
+                borderColor: '#fff',  
+                borderWidth: 2,  
                 anchor: 'end',
                 align: 'start',
                 offset: 10
@@ -87,6 +83,6 @@
         type: 'pie',
         data: data,
         options: options,
-        plugins: [ChartDataLabels]  // Kích hoạt plugin datalabels
+        plugins: [ChartDataLabels]  
     });
 </script>

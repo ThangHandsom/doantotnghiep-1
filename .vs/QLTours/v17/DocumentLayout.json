@@ -3,20 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C5E43A7B-6758-47EE-967B-FC29A3E43B3A}|QLTours\\QLTours.csproj|c:\\users\\dell\\downloads\\tour-buo4ss\\tour\\qltours\\views\\home\\tourdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C5E43A7B-6758-47EE-967B-FC29A3E43B3A}|QLTours\\QLTours.csproj|solutionrelative:qltours\\views\\home\\tourdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{C5E43A7B-6758-47EE-967B-FC29A3E43B3A}|QLTours\\QLTours.csproj|c:\\users\\dell\\downloads\\tour-buo4ss\\tour\\qltours\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5E43A7B-6758-47EE-967B-FC29A3E43B3A}|QLTours\\QLTours.csproj|solutionrelative:qltours\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C5E43A7B-6758-47EE-967B-FC29A3E43B3A}|QLTours\\QLTours.csproj|c:\\users\\dell\\downloads\\tour-buo4ss\\tour\\qltours\\views\\home\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C5E43A7B-6758-47EE-967B-FC29A3E43B3A}|QLTours\\QLTours.csproj|solutionrelative:qltours\\views\\home\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C5E43A7B-6758-47EE-967B-FC29A3E43B3A}|QLTours\\QLTours.csproj|c:\\users\\dell\\downloads\\tour-buo4ss\\tour\\qltours\\views\\home\\booktour.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C5E43A7B-6758-47EE-967B-FC29A3E43B3A}|QLTours\\QLTours.csproj|solutionrelative:qltours\\views\\home\\booktour.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{C5E43A7B-6758-47EE-967B-FC29A3E43B3A}|QLTours\\QLTours.csproj|c:\\users\\dell\\downloads\\tour-buo4ss\\tour\\qltours\\views\\home\\tourdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C5E43A7B-6758-47EE-967B-FC29A3E43B3A}|QLTours\\QLTours.csproj|solutionrelative:qltours\\views\\home\\tourdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C5E43A7B-6758-47EE-967B-FC29A3E43B3A}|QLTours\\QLTours.csproj|c:\\users\\dell\\downloads\\tour-buo4ss\\tour\\qltours\\views\\home\\bookingdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C5E43A7B-6758-47EE-967B-FC29A3E43B3A}|QLTours\\QLTours.csproj|solutionrelative:qltours\\views\\home\\bookingdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{C5E43A7B-6758-47EE-967B-FC29A3E43B3A}|QLTours\\QLTours.csproj|c:\\users\\dell\\downloads\\tour-buo4ss\\tour\\qltours\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C5E43A7B-6758-47EE-967B-FC29A3E43B3A}|QLTours\\QLTours.csproj|solutionrelative:qltours\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5E43A7B-6758-47EE-967B-FC29A3E43B3A}|QLTours\\QLTours.csproj|c:\\users\\dell\\downloads\\tour-buo4ss\\tour\\qltours\\views\\shared\\_sidenavpartialview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C5E43A7B-6758-47EE-967B-FC29A3E43B3A}|QLTours\\QLTours.csproj|solutionrelative:qltours\\views\\shared\\_sidenavpartialview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5E43A7B-6758-47EE-967B-FC29A3E43B3A}|QLTours\\QLTours.csproj|c:\\users\\dell\\downloads\\tour-buo4ss\\tour\\qltours\\views\\shared\\adminsidepart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C5E43A7B-6758-47EE-967B-FC29A3E43B3A}|QLTours\\QLTours.csproj|solutionrelative:qltours\\views\\shared\\adminsidepart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5E43A7B-6758-47EE-967B-FC29A3E43B3A}|QLTours\\QLTours.csproj|c:\\users\\dell\\downloads\\tour-buo4ss\\tour\\qltours\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C5E43A7B-6758-47EE-967B-FC29A3E43B3A}|QLTours\\QLTours.csproj|solutionrelative:qltours\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5E43A7B-6758-47EE-967B-FC29A3E43B3A}|QLTours\\QLTours.csproj|c:\\users\\dell\\downloads\\tour-buo4ss\\tour\\qltours\\views\\shared\\_employeelayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C5E43A7B-6758-47EE-967B-FC29A3E43B3A}|QLTours\\QLTours.csproj|solutionrelative:qltours\\views\\shared\\_employeelayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5E43A7B-6758-47EE-967B-FC29A3E43B3A}|QLTours\\QLTours.csproj|c:\\users\\dell\\downloads\\tour-buo4ss\\tour\\qltours\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C5E43A7B-6758-47EE-967B-FC29A3E43B3A}|QLTours\\QLTours.csproj|solutionrelative:qltours\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5E43A7B-6758-47EE-967B-FC29A3E43B3A}|QLTours\\QLTours.csproj|c:\\users\\dell\\downloads\\tour-buo4ss\\tour\\qltours\\areas\\employee\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C5E43A7B-6758-47EE-967B-FC29A3E43B3A}|QLTours\\QLTours.csproj|solutionrelative:qltours\\areas\\employee\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -59,15 +83,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "QLTours\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "QLTours\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T17:30:00.705Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "TourDetail.cshtml",
               "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\Views\\Home\\TourDetail.cshtml",
               "RelativeDocumentMoniker": "QLTours\\Views\\Home\\TourDetail.cshtml",
               "ToolTip": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\Views\\Home\\TourDetail.cshtml",
               "RelativeToolTip": "QLTours\\Views\\Home\\TourDetail.cshtml",
-              "ViewState": "AQIAAGkAAAAAAAAAAAAAAJgAAAAbAAAA",
+              "ViewState": "AQIAAMMAAAAAAAAAAAAAANgAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-20T02:41:06.375Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-10T17:08:58.117Z"
             },
             {
               "$type": "Document",
@@ -77,33 +113,93 @@
               "RelativeDocumentMoniker": "QLTours\\Views\\Home\\List.cshtml",
               "ToolTip": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\Views\\Home\\List.cshtml",
               "RelativeToolTip": "QLTours\\Views\\Home\\List.cshtml",
-              "ViewState": "AQIAAL0AAAAAAAAAAAAAANEAAAA+AAAA",
+              "ViewState": "AQIAAPAAAAAAAAAAAAAAAA0BAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-20T02:40:39.355Z"
+              "WhenOpened": "2025-12-10T17:08:23.887Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "BookTour.cshtml",
-              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\Views\\Home\\BookTour.cshtml",
-              "RelativeDocumentMoniker": "QLTours\\Views\\Home\\BookTour.cshtml",
-              "ToolTip": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\Views\\Home\\BookTour.cshtml",
-              "RelativeToolTip": "QLTours\\Views\\Home\\BookTour.cshtml",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 6,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "QLTours\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "QLTours\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-20T02:40:51.206Z"
+              "WhenOpened": "2025-12-10T14:31:24.706Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_EmployeeLayout.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\Views\\Shared\\_EmployeeLayout.cshtml",
+              "RelativeDocumentMoniker": "QLTours\\Views\\Shared\\_EmployeeLayout.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\Views\\Shared\\_EmployeeLayout.cshtml",
+              "RelativeToolTip": "QLTours\\Views\\Shared\\_EmployeeLayout.cshtml",
+              "ViewState": "AQIAAGwAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-10T14:27:36.244Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_SideNavPartialView.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\Views\\Shared\\_SideNavPartialView.cshtml",
+              "RelativeDocumentMoniker": "QLTours\\Views\\Shared\\_SideNavPartialView.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\Views\\Shared\\_SideNavPartialView.cshtml",
+              "RelativeToolTip": "QLTours\\Views\\Shared\\_SideNavPartialView.cshtml",
+              "ViewState": "AQIAAE8AAAAAAAAAAAAgwEwAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-10T14:25:35.795Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\Areas\\Employee\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "QLTours\\Areas\\Employee\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\Areas\\Employee\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "QLTours\\Areas\\Employee\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-10T14:26:28.101Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "BookingDetails.cshtml",
-              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\Views\\Home\\BookingDetails.cshtml",
-              "RelativeDocumentMoniker": "QLTours\\Views\\Home\\BookingDetails.cshtml",
-              "ToolTip": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\Views\\Home\\BookingDetails.cshtml",
-              "RelativeToolTip": "QLTours\\Views\\Home\\BookingDetails.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "QLTours\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "QLTours\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAIQAAAAAAAAAAAAAABEAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-20T02:40:42.224Z"
+              "WhenOpened": "2025-12-10T14:17:30.564Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AdminSidePart.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\Views\\Shared\\AdminSidePart.cshtml",
+              "RelativeDocumentMoniker": "QLTours\\Views\\Shared\\AdminSidePart.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\Views\\Shared\\AdminSidePart.cshtml",
+              "RelativeToolTip": "QLTours\\Views\\Shared\\AdminSidePart.cshtml",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAAAFsAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-10T14:31:25.771Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "_AdminLayout.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\Views\\Shared\\_AdminLayout.cshtml",
+              "RelativeDocumentMoniker": "QLTours\\Views\\Shared\\_AdminLayout.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\Views\\Shared\\_AdminLayout.cshtml",
+              "RelativeToolTip": "QLTours\\Views\\Shared\\_AdminLayout.cshtml",
+              "ViewState": "AQIAAIEAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-10T14:25:37.854Z"
             }
           ]
         },

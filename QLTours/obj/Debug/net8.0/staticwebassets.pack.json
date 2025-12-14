@@ -237,10 +237,6 @@
       "PackagePath": "staticwebassets\\Adminassets\\images\\bg-02.png"
     },
     {
-      "Id": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\wwwroot\\Adminassets\\images\\logo\\DHV.png",
-      "PackagePath": "staticwebassets\\Adminassets\\images\\logo\\DHV.png"
-    },
-    {
       "Id": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\wwwroot\\Adminassets\\images\\logo\\anhdep.png",
       "PackagePath": "staticwebassets\\Adminassets\\images\\logo\\anhdep.png"
     },
@@ -251,10 +247,6 @@
     {
       "Id": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\wwwroot\\Adminassets\\images\\logo\\log.png",
       "PackagePath": "staticwebassets\\Adminassets\\images\\logo\\log.png"
-    },
-    {
-      "Id": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\wwwroot\\Adminassets\\images\\logo\\logo-2.png",
-      "PackagePath": "staticwebassets\\Adminassets\\images\\logo\\logo-2.png"
     },
     {
       "Id": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\wwwroot\\Adminassets\\images\\logo\\logo-fold-white.png",
@@ -269,8 +261,8 @@
       "PackagePath": "staticwebassets\\Adminassets\\images\\logo\\logo-white.png"
     },
     {
-      "Id": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\wwwroot\\Adminassets\\images\\logo\\logo1.png",
-      "PackagePath": "staticwebassets\\Adminassets\\images\\logo\\logo1.png"
+      "Id": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\wwwroot\\Adminassets\\images\\logo\\logodhvinh.png",
+      "PackagePath": "staticwebassets\\Adminassets\\images\\logo\\logodhvinh.png"
     },
     {
       "Id": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\wwwroot\\Adminassets\\images\\logo\\logoo.png",
@@ -3897,6 +3889,14 @@
       "PackagePath": "staticwebassets\\images\\itinerary\\nhatrang06.jpg"
     },
     {
+      "Id": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\wwwroot\\images\\itinerary\\quảng ninh (1).jpg",
+      "PackagePath": "staticwebassets\\images\\itinerary\\quảng ninh (1).jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\wwwroot\\images\\itinerary\\quảng ninh.jpg",
+      "PackagePath": "staticwebassets\\images\\itinerary\\quảng ninh.jpg"
+    },
+    {
       "Id": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\wwwroot\\images\\loka.webp",
       "PackagePath": "staticwebassets\\images\\loka.webp"
     },
@@ -4085,6 +4085,10 @@
       "PackagePath": "staticwebassets\\images\\tours\\dalak.jpg"
     },
     {
+      "Id": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\wwwroot\\images\\tours\\dalat (1) (1).jpg",
+      "PackagePath": "staticwebassets\\images\\tours\\dalat (1) (1).jpg"
+    },
+    {
       "Id": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\wwwroot\\images\\tours\\dalat (1).jpg",
       "PackagePath": "staticwebassets\\images\\tours\\dalat (1).jpg"
     },
@@ -4129,12 +4133,32 @@
       "PackagePath": "staticwebassets\\images\\tours\\ha.jpg"
     },
     {
+      "Id": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\wwwroot\\images\\tours\\hoian (1).jpg",
+      "PackagePath": "staticwebassets\\images\\tours\\hoian (1).jpg"
+    },
+    {
       "Id": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\wwwroot\\images\\tours\\hoian.jpg",
       "PackagePath": "staticwebassets\\images\\tours\\hoian.jpg"
     },
     {
+      "Id": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\wwwroot\\images\\tours\\huế (1) (1) (1).jpg",
+      "PackagePath": "staticwebassets\\images\\tours\\huế (1) (1) (1).jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\wwwroot\\images\\tours\\huế (1) (1).jpg",
+      "PackagePath": "staticwebassets\\images\\tours\\huế (1) (1).jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\wwwroot\\images\\tours\\huế (1).jpg",
+      "PackagePath": "staticwebassets\\images\\tours\\huế (1).jpg"
+    },
+    {
       "Id": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\wwwroot\\images\\tours\\huế.jpg",
       "PackagePath": "staticwebassets\\images\\tours\\huế.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\wwwroot\\images\\tours\\hà nội (1).jpg",
+      "PackagePath": "staticwebassets\\images\\tours\\hà nội (1).jpg"
     },
     {
       "Id": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\wwwroot\\images\\tours\\hà nội.jpg",
@@ -4157,8 +4181,16 @@
       "PackagePath": "staticwebassets\\images\\tours\\quảng bình.jpg"
     },
     {
+      "Id": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\wwwroot\\images\\tours\\quảng ninh (1).jpg",
+      "PackagePath": "staticwebassets\\images\\tours\\quảng ninh (1).jpg"
+    },
+    {
       "Id": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\wwwroot\\images\\tours\\quảng ninh.jpg",
       "PackagePath": "staticwebassets\\images\\tours\\quảng ninh.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\wwwroot\\images\\tours\\sapa (1).jpg",
+      "PackagePath": "staticwebassets\\images\\tours\\sapa (1).jpg"
     },
     {
       "Id": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\wwwroot\\images\\tours\\sapa.jpg",

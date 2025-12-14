@@ -44,14 +44,12 @@ namespace QLTours.Areas.Admin.Controllers
                 .Where(b => b.Status == "Đã thanh toán")
                 .ToList();
 
-            // Kiểm tra nếu bookings không có
             if (bookings == null || !bookings.Any())
             {
                 ViewBag.RevenueByQuarter = new List<RevenueData>();
                 return View();
             }
 
-            // Nhóm doanh thu theo quý và năm, và hiển thị chi tiết tháng
             var revenueByQuarter = from booking in bookings
                                    group booking by new
                                    {
@@ -113,8 +111,7 @@ namespace QLTours.Areas.Admin.Controllers
         }
 
         // POST: Admin/Bookings/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("BookingId,UserId,TourId,Total,BookingDate,Status")] Booking booking)
@@ -149,7 +146,6 @@ namespace QLTours.Areas.Admin.Controllers
         }
 
         // POST: Admin/Bookings/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]

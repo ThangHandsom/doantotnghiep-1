@@ -25,6 +25,7 @@
 		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="9.0.0-preview.1.24112.3" />
 		<PackageReference Include="MimeKit" Version="4.8.0" />
 		<PackageReference Include="NETCore.MailKit" Version="2.1.0" />
+		<PackageReference Include="QRCoder" Version="1.7.0" />
 		<PackageReference Include="RestSharp" Version="112.1.0" />
 		<PackageReference Include="System.Text.Json" Version="9.0.0-preview.1.24080.9" />
 		<PackageReference Include="X.PagedList" Version="10.5.7" />

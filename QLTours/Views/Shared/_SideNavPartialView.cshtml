@@ -1,67 +1,74 @@
 ﻿<style>
-    /* Sidebar */
     .side-nav {
-        background-color: #fff; /* Màu nền sidebar */
-        color: #333; /* Màu chữ đen cho dễ đọc */
-        width: 250px; /* Chiều rộng của sidebar */
+        background-color: #fff; 
+        color: #333; 
+        width: 250px; 
         padding: 20px 0;
     }
 
-    /* Menu Item */
     .side-nav-menu .nav-item a {
         display: flex;
         align-items: center;
-        color: #333; /* Màu chữ item */
+        color: #333;
         text-decoration: none;
         padding: 12px 20px;
         font-size: 16px;
-        border-radius: 4px; /* Bo tròn các góc */
-        margin-bottom: 5px; /* Khoảng cách giữa các menu item */
+        border-radius: 4px; 
+        margin-bottom: 5px; 
     }
 
-    /* Biểu tượng */
+
     .side-nav-menu .nav-item .icon-holder {
         margin-right: 10px;
         font-size: 18px;
         display: inline-block;
     }
 
-    /* Hiệu ứng hover trên menu */
+
     .side-nav-menu .nav-item a:hover {
-        background-color: #3a3fbd; /* Màu nền khi hover */
-        color: #fff; /* Màu chữ khi hover */
+        background-color: lightgrey;
+        color: #fff; 
     }
 
-    /* Thay đổi màu chữ khi nhấn vào menu item */
+
     .side-nav-menu .nav-item a.active {
-        color: #3498db; /* Màu chữ khi nhấn */
-        background-color: #f5f5f5; /* Màu nền khi nhấn */
+        color: #3498db; 
+        background-color: #f5f5f5; 
     }
 
-    /* Dropdown menu */
     .side-nav-menu .nav-item .dropdown-menu {
-        background-color: #f5f5f5; /* Màu nền của dropdown */
+        background-color: #f5f5f5;
         padding-left: 20px;
         border-radius: 4px;
         display: none;
     }
 
-    /* Hiển thị dropdown khi hover */
     .side-nav-menu .nav-item:hover .dropdown-menu {
         display: block;
     }
 
-    /* Các mục trong dropdown */
     .side-nav-menu .nav-item .dropdown-menu li a {
         color: #333;
         padding: 10px 20px;
         text-decoration: none;
     }
 
-    /* Hiệu ứng hover trên các mục trong dropdown */
     .side-nav-menu .dropdown-menu li a:hover {
-        background-color: #3498db; /* Màu nền khi hover trong dropdown */
-        color: #red; /* Màu chữ khi hover trong dropdown */
+        background-color: lightgrey;
+        color: #fff;
+    }
+  
+    .arrow-icon {
+        transition: transform 0.3s ease;
+        display: inline-block; 
+    }
+
+    a[aria-expanded="true"] .arrow-icon {
+        transform: rotate(180deg);
+    }
+
+    .dropdown-toggle::after {
+        display: none !important;
     }
 </style>
 
@@ -70,24 +77,34 @@
 <div class="side-nav">
     <div class="side-nav-inner">
         <ul class="side-nav-menu scrollable">
-            <!-- Danh Mục Quản Lý  -->
-            <li class="nav-item dropdown">
-                <a class="dropdown-toggle" href="javascript:void(0);">
+            <li class="nav-item ">
+                <a class="dropdown-toggle" asp-controller="Home" asp-action="Index">
                     <span class="icon-holder">
-                        <i class="anticon anticon-hdd"></i>
+                        <i class="anticon anticon-user"></i>
                     </span>
-                    <span class="title">Danh Mục Quản Lý ok</span>
+                    <span class="title ">Nhân Viên</span>
                     <span class="arrow">
                         <i class="arrow-icon"></i>
                     </span>
                 </a>
-                <ul class="dropdown-menu">
+            </li>
+            <li class="nav-item">
+                <!--<a class="dropdown-toggle" href="#quanLyCollapse" data-toggle="collapse" aria-expanded="false">
+                    <span class="icon-holder">
+                        <i class="anticon anticon-hdd"></i>
+                    </span>
+                    <span class="title">Danh Mục Quản Lý</span>
+                    <span class="arrow">
+                        <i class="arrow-icon anticon anticon-down"></i>
+                    </span>
+                </a>-->
+                <ul>
                     <li>
                         <a asp-controller="Tours" asp-action="Index">
                             <span class="icon-holder">
                                 <i class="anticon anticon-appstore"></i>
                             </span>
-                            Quản lý Tour
+                            Quản Lý Tour
                         </a>
                     </li>
                     <li>
@@ -95,7 +112,7 @@
                             <span class="icon-holder">
                                 <i class="anticon anticon-appstore"></i>
                             </span>
-                            Quản lý Chi tiết Tour
+                            Quản Lý Chi Tiết Tour
                         </a>
                     </li>
                     <li>
@@ -103,7 +120,7 @@
                             <span class="icon-holder">
                                 <i class="anticon anticon-book"></i>
                             </span>
-                            Quản lý Booking
+                            Quản Lý Đặt Tour
                         </a>
                     </li>
                     <li>
@@ -111,7 +128,7 @@
                             <span class="icon-holder">
                                 <i class="anticon anticon-appstore"></i>
                             </span>
-                            Quản lý Danh Mục
+                            Quản Lý Loại Tour
                         </a>
                     </li>
                     <li>
@@ -119,7 +136,7 @@
                             <span class="icon-holder">
                                 <i class="anticon anticon-car"></i>
                             </span>
-                            Quản lý Phương tiện
+                            Quản Lý Phương Tiện
                         </a>
                     </li>
                     <li>
@@ -127,7 +144,7 @@
                             <span class="icon-holder">
                                 <i class="fas fa-hotel"></i>
                             </span>
-                            Quản lý Khách sạn
+                            Quản Lý Khách Sạn
                         </a>
                     </li>
                     <li>
@@ -135,15 +152,7 @@
                             <span class="icon-holder">
                                 <i class="anticon anticon-calendar"></i>
                             </span>
-                            Quản lý Lịch trình
-                        </a>
-                    </li>
-                    <li>
-                        <a asp-controller="ItineraryImages" asp-action="Index">
-                            <span class="icon-holder">
-                                <i class="anticon anticon-picture"></i>
-                            </span>
-                            Quản lý ảnh lịch trình
+                            Quản Lý Lịch Trình
                         </a>
                     </li>
                     <li>
@@ -151,16 +160,20 @@
                             <span class="icon-holder">
                                 <i class="fas fa-map-signs"></i>
                             </span>
-                            Quản lý Chi tiết lịch trình
+                            Quản Lý Chi Tiết Lịch Trình
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-controller="ItineraryImages" asp-action="Index">
+                            <span class="icon-holder">
+                                <i class="anticon anticon-picture"></i>
+                            </span>
+                            Quản Lý Ảnh Lịch Trình 
                         </a>
                     </li>
                 </ul>
             </li>
-
-
         </ul>
     </div>
 </div>
 
-    </div>
-</div>

@@ -1,7 +1,5 @@
 ﻿@model QLTours.Models.UserProfileViewModel
 
-<h2 class="text-center mb-4 text-primary">Hồ Sơ Của Tôi</h2>
-
 @if (ViewBag.Message != null)
 {
     <div class="alert alert-info">
@@ -13,6 +11,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-6 col-md-8 col-sm-12">
             <form asp-action="MyProfile" method="post" class="custom-form">
+                <h2 class="text-center mb-4 text-primary">Hồ Sơ Của Tôi</h2>
                 <div class="card custom-card">
                     <div class="card-body">
                         <!-- Tên người dùng -->
@@ -48,7 +47,7 @@
                         <!-- Nút hành động -->
                         <div class="d-flex justify-content-between align-items-center mt-4">
                             <button type="submit" class="btn custom-btn">Lưu</button>
-                            <a href="@Url.Action("Index", "Home")" class="btn btn-secondary custom-btn">Hủy</a>
+                            <button type="button" class="btn btn-secondary custom-btn" onclick="location.href='@Url.Action("Index", "Home")'">Hủy</button>
                         </div>
                     </div>
                 </div>
@@ -58,10 +57,11 @@
 </div>
 
 <style>
-    /* Custom Styles for User Profile Form */
+
     .custom-form {
         background-color: #f8f9fa;
-        padding: 20px;
+        padding: 30px;
+        margin: 20px;
         border-radius: 10px;
     }
 
@@ -89,33 +89,54 @@
         }
 
     .custom-btn {
-        background-color: #007bff;
-        color: #fff;
-        border-radius: 8px;
-        padding: 10px 20px;
-        font-size: 16px;
-        text-transform: uppercase;
-        border: none;
-        transition: background-color 0.3s;
-    }
-
-        .custom-btn:hover {
-            background-color: #0056b3;
-            cursor: pointer;
-        }
-
-        .custom-btn:focus {
-            outline: none;
-        }
-
-    /* Label Styling */
-    .form-label {
-        font-size: 1rem;
+        min-width: 120px;
+        padding: 10px 24px;
+        font-size: 16px; 
         font-weight: 600;
-        color: #333;
+        border-radius: 8px; 
+        border: none; 
+        display: inline-flex; 
+        justify-content: center;
+        align-items: center;
+        height: auto !important; 
+        width: auto !important; 
     }
 
-    /* Error and Success Message Styling */
+    
+    button[type="submit"].custom-btn {
+        background-color: #00bcd4; 
+        color: white;
+    }
+
+        button[type="submit"].custom-btn:hover {
+            background-color: #00acc1;
+        }
+
+    
+    .form-label {
+        font-size: 18px; 
+        font-weight: 600; 
+        color: #333333; 
+        margin-bottom: 8px; 
+        display: block; 
+    }
+
+    .custom-input {
+        font-size: 16px; 
+        padding: 12px 15px; 
+        border-radius: 8px; 
+        background-color: #f8f9fa; 
+        border: 1px solid #e9ecef;
+    }
+        .custom-input:focus {
+            background-color: #ffffff;
+            border-color: #00bcd4; 
+            box-shadow: 0 0 0 0.2rem rgba(0, 188, 212, 0.25);
+        }
+    .form-group.mb-3 {
+        margin-bottom: 24px !important; 
+    }
+
     .alert-info {
         background-color: #d1ecf1;
         border-color: #bee5eb;

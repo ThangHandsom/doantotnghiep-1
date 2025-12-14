@@ -25,20 +25,16 @@ namespace QLTours.Areas.Employee.Controllers
         // GET: Employee/DetailItineraries
         public async Task<IActionResult> Index(int pageNumber = 1, int pageSize = 5)
         {
-            // Tổng số chi tiết lịch trình
             var totalItems = await _context.DetailItineraries.CountAsync();
 
-            // Tính tổng số trang
             var totalPages = (int)Math.Ceiling(totalItems / (double)pageSize);
 
-            // Lấy dữ liệu theo trang
             var pagedItineraries = await _context.DetailItineraries
                 .Include(d => d.Itinerary)
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
                 .ToListAsync();
 
-            // Truyền thông tin sang View
             ViewBag.CurrentPage = pageNumber;
             ViewBag.TotalPages = totalPages;
             ViewBag.TotalItems = totalItems;
@@ -82,23 +78,20 @@ namespace QLTours.Areas.Employee.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Lấy bản ghi cuối cùng trong Itinerary để kiểm tra thời gian
                 var lastDetail = await _context.DetailItineraries
                     .Where(d => d.ItineraryId == detailItinerary.ItineraryId)
                     .OrderByDescending(d => d.ThoiGian)
                     .FirstOrDefaultAsync();
 
-                // Kiểm tra nếu đã có bản ghi trước đó
                 if (lastDetail != null && detailItinerary.ThoiGian.HasValue)
                 {
-                    // Nếu thời gian mới nhỏ hơn hoặc bằng thời gian cuối cùng
+
                     if (detailItinerary.ThoiGian.Value <= lastDetail.ThoiGian.Value)
                     {
                         ModelState.AddModelError("ThoiGian", $"Thời gian phải lớn hơn {lastDetail.ThoiGian.Value:hh\\:mm tt}");
                     }
                 }
 
-                // Nếu ModelState vẫn hợp lệ sau kiểm tra, thêm bản ghi mới
                 if (ModelState.IsValid)
                 {
                     _context.Add(detailItinerary);
@@ -107,7 +100,6 @@ namespace QLTours.Areas.Employee.Controllers
                 }
             }
 
-            // Trả về view với lỗi (nếu có)
             ViewData["ItineraryId"] = new SelectList(_context.Itineraries, "ItineraryId", "ItineraryId", detailItinerary.ItineraryId);
             return View(detailItinerary);
         }
@@ -145,28 +137,23 @@ namespace QLTours.Areas.Employee.Controllers
 
             if (ModelState.IsValid)
             {
-                // Lấy bản ghi cuối cùng trong Itinerary để kiểm tra thời gian
                 var lastDetail = await _context.DetailItineraries
                     .Where(d => d.ItineraryId == detailItinerary.ItineraryId)
                     .OrderByDescending(d => d.ThoiGian)
                     .FirstOrDefaultAsync();
 
-                // Kiểm tra nếu đã có bản ghi trước đó và thời gian nhập vào có hợp lệ
                 if (lastDetail != null && detailItinerary.ThoiGian.HasValue)
                 {
-                    // Nếu thời gian mới nhỏ hơn hoặc bằng thời gian cuối cùng
                     if (detailItinerary.ThoiGian.Value <= lastDetail.ThoiGian.Value)
                     {
                         ModelState.AddModelError("ThoiGian", $"Thời gian phải lớn hơn {lastDetail.ThoiGian.Value:hh\\:mm tt}");
                     }
                 }
 
-                // Nếu ModelState vẫn hợp lệ sau kiểm tra, cập nhật bản ghi mới
                 if (ModelState.IsValid)
                 {
                     try
                     {
-                        // Tách thực thể cũ trước khi cập nhật
                         var existingDetail = _context.DetailItineraries.Local.FirstOrDefault(e => e.DetailId == id);
                         if (existingDetail != null)
                         {
@@ -191,7 +178,6 @@ namespace QLTours.Areas.Employee.Controllers
                 }
             }
 
-            // Trả về view với lỗi (nếu có)
             ViewData["ItineraryId"] = new SelectList(_context.Itineraries, "ItineraryId", "ItineraryId", detailItinerary.ItineraryId);
             return View(detailItinerary);
         }

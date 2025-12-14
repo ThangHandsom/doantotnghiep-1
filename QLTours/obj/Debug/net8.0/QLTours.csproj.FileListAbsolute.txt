@@ -2192,3 +2192,5 @@ C:\Users\DELL\Downloads\Tour-buo4ss\Tour\QLTours\obj\Debug\net8.0\refint\QLTours
 C:\Users\DELL\Downloads\Tour-buo4ss\Tour\QLTours\obj\Debug\net8.0\QLTours.pdb
 C:\Users\DELL\Downloads\Tour-buo4ss\Tour\QLTours\obj\Debug\net8.0\QLTours.genruntimeconfig.cache
 C:\Users\DELL\Downloads\Tour-buo4ss\Tour\QLTours\obj\Debug\net8.0\ref\QLTours.dll
+C:\Users\DELL\Downloads\Tour-buo4ss\Tour\QLTours\obj\Debug\net8.0\QLTours.sourcelink.json
+C:\Users\DELL\Downloads\Tour-buo4ss\Tour\QLTours\bin\Debug\net8.0\QRCoder.dll

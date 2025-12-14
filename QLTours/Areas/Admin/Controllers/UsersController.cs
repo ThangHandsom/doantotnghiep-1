@@ -24,17 +24,15 @@ namespace QLTours.Areas.Admin.Controllers
                 return Problem("Entity set 'QuanLyTourContext.Users' is null.");
             }
 
-            var users = _context.Users.AsNoTracking(); // Không tracking để tối ưu hiệu suất.
-            var totalUsers = await users.CountAsync(); // Tổng số người dùng.
-            var totalPages = (int)Math.Ceiling(totalUsers / (double)pageSize); // Tính số trang.
+            var users = _context.Users.AsNoTracking(); 
+            var totalUsers = await users.CountAsync(); 
+            var totalPages = (int)Math.Ceiling(totalUsers / (double)pageSize); 
 
-            // Lấy dữ liệu cho trang hiện tại.
             var pagedUsers = await users
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
                 .ToListAsync();
 
-            // Truyền thông tin phân trang qua ViewBag.
             ViewBag.CurrentPage = pageNumber;
             ViewBag.TotalPages = totalPages;
             ViewBag.TotalUsers = totalUsers;

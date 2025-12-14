@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "10j/73wER2rAQdzW33OHS7n4JL/V57Dk0DRMOZbZUa0poI8VKRRQP5/JyPhuE81NaT9gE15NidVkGE8vq/07EQ==",
+  "dgSpecHash": "fC6thFk6z44pak7w6T6aJdT3+RYO+COPZoWPotHxcZtR/XD7QvMdLF3q9HyIjveYwRocSJyoFRs2mn25w6o6Mw==",
   "success": true,
   "projectFilePath": "C:\\Users\\DELL\\Downloads\\Tour-buo4ss\\Tour\\QLTours\\QLTours.csproj",
   "expectedPackageFiles": [
@@ -137,6 +137,7 @@
     "C:\\Users\\DELL\\.nuget\\packages\\nuget.projectmodel\\6.8.0\\nuget.projectmodel.6.8.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\nuget.protocol\\6.8.0\\nuget.protocol.6.8.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\nuget.versioning\\6.8.0\\nuget.versioning.6.8.0.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\qrcoder\\1.7.0\\qrcoder.1.7.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\restsharp\\112.1.0\\restsharp.112.1.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\system.codedom\\5.0.0\\system.codedom.5.0.0.nupkg.sha512",

@@ -7,25 +7,27 @@
     <table class="table">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>TourName</th>
-                <th>Date</th>
-                <th>Total</th>
-                <th>Status</th>
+                <th>STT</th>
+                <th>Tên chuyến</th>
+                <th>Ngày đặt</th>
+                <th>Tổng tiền</th>
+                <th>Trạng thái</th>
+                <th>Thao tác</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
+            @{ int stt = 1; }
+            @foreach (var item in Model.OrderByDescending(x => x.BookingDate))
             {
                 <tr>
-                    <td>@item.BookingId</td>
+                    <td>@(stt++)</td>
                     <td>@item.Tour.TourName</td>
                     <td>@item.BookingDate.ToString("dd/MM/yyyy")</td>
-                    <td>@item.Total</td>
+                    <td>@item.Total.ToString("#,##0") VNĐ</td>
                     <td>@item.Status</td>
                     <td>
                         <form method="post" action="@Url.Action("CancelBooking", "Home", new { bookingId = item.BookingId })">
-                            <button type="submit" class="btn btn-danger">Remove</button>
+                            <button type="submit" class="btn btn-danger">Hủy đặt</button>
                         </form>
                        
                     </td>

@@ -61,55 +61,54 @@ namespace QLTours.Controllers
         }
 
 
-		// Phương thức gửi email thông báo thanh toán thành công
-		private void SendPaymentSuccessEmail(string userEmail, Booking booking)
-		{
-			var smtpServer = "smtp.gmail.com"; // Thay thế bằng thông tin SMTP server của bạn
-			var smtpPort = 587; // Thay thế bằng cổng SMTP của bạn (thông thường là 587 hoặc 465)
-			//var smtpUsername = "voquocthang107@gmail.com"; // Thay thế bằng tên đăng nhập SMTP của bạn
-			//var smtpPassword = "axmx xdsz bzqi hgst"; // Thay thế bằng mật khẩu SMTP của bạn
+        // Phương thức gửi email thông báo thanh toán thành công
+        private void SendPaymentSuccessEmail(string userEmail, Booking booking)
+        {
+            var smtpServer = "smtp.gmail.com";
+            var smtpPort = 587;
 
-            var smtpUsername = "dangthanh112003@gmail.com"; 
-            var smtpPassword = "gmwa mxva rloa qnrh"; 
+
+            var smtpUsername = "dangthanh112003@gmail.com";
+            var smtpPassword = "gmwa mxva rloa qnrh";
 
             var smtp = new SmtpClient
-			{
-				Host = smtpServer,
-				Port = smtpPort,
-				EnableSsl = true, // Bật kết nối SSL
-				DeliveryMethod = SmtpDeliveryMethod.Network,
-				UseDefaultCredentials = false,
-				Credentials = new NetworkCredential(smtpUsername, smtpPassword)
-			};
+            {
+                Host = smtpServer,
+                Port = smtpPort,
+                EnableSsl = true, // Bật kết nối SSL
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(smtpUsername, smtpPassword)
+            };
 
-			var mailMessage = new MailMessage
-			{
-				//From = new MailAddress("voquocthang107@gmail.com"),
-                From = new MailAddress("dangthanh112003@gmail.com"),
-                Subject = "Thanh toán thành công", // Tiêu đề email
-				Body = $"Chúc mừng! Thanh toán của bạn cho đơn đặt chỗ ID: {booking.BookingId} đã thành công. Cảm ơn bạn đã mua sắm tại chúng tôi!<br>" +
-					   $"Tổng số tiền: {booking.Total} VND<br>" +
-					   $"Ngày đặt: {booking.BookingDate}<br>" +
-					   $"Trạng thái: {booking.Status}",
-				IsBodyHtml = true
-			};
+            var mailMessage = new MailMessage
+            {
 
-			mailMessage.To.Add(userEmail); // Thay thế bằng địa chỉ email của người nhận
+                From = new MailAddress("thangthanthien211120002@gmail.com"),
+                Subject = "Thanh toán thành công",
+                Body = $"Chúc mừng! Thanh toán của bạn cho đơn đặt chỗ ID: {booking.BookingId} đã thành công. Cảm ơn bạn đã mua sắm tại chúng tôi!<br>" +
+                       $"Tổng số tiền: {booking.Total} VND<br>" +
+                       $"Ngày đặt: {booking.BookingDate}<br>" +
+                       $"Trạng thái: {booking.Status}",
+                IsBodyHtml = true
+            };
 
-			try
-			{
-				smtp.Send(mailMessage);
-			}
-			catch (Exception ex)
-			{
-				// Xử lý lỗi khi gửi email
-				throw ex;
-			}
-		}
+            mailMessage.To.Add(userEmail);
+
+            try
+            {
+                smtp.Send(mailMessage);
+            }
+            catch (Exception ex)
+            {
+                // Xử lý lỗi khi gửi email
+                throw ex;
+            }
+        }
 
 
 
-		public IActionResult PaymentCallback()
+        public IActionResult PaymentCallback()
         {
             var response = _vnPayService.PaymentExecute(Request.Query);
 
@@ -123,7 +122,7 @@ namespace QLTours.Controllers
                 {
                     // Update booking status to "Đã thanh toán" in the database
                     var booking = _ctx.Bookings
-                        .Include(b => b.User) // Load thông tin user liên quan đến booking
+                        .Include(b => b.User)
                         .FirstOrDefault(b => b.BookingId == bookingId);
                     if (booking != null)
                     {
@@ -163,15 +162,12 @@ namespace QLTours.Controllers
 
         public IActionResult Index()
         {
-            // Truy vấn danh sách category từ cơ sở dữ liệu
             var categories = _ctx.Categories.ToList();
 
-            // Truy vấn danh sách tour từ cơ sở dữ liệu
             var tours = _ctx.Tours
                 .Include(t => t.Category)
                 .ToList();
 
-            // Truyền danh sách category và danh sách tour đến view
             ViewBag.Categories = new SelectList(categories, "CategoryId", "CategoryName");
             return View(tours);
         }
@@ -201,14 +197,11 @@ namespace QLTours.Controllers
         }*/
         public IActionResult List(int page = 1, int pageSize = 6)
         {
-            // Lấy danh mục
             var categories = _ctx.Categories.ToList();
 
-            // Lấy danh sách TourId
             var tourNames = _ctx.Tours.Select(t => t.TourId).Distinct().ToList();
             ViewBag.TourNames = new SelectList(tourNames);
 
-            // Lấy tất cả Tour với các liên kết cần thiết và thực hiện phân trang
             var tours = _ctx.Tours
                 .Include(t => t.Category)
                 .Include(t => t.Reviews)
@@ -217,30 +210,25 @@ namespace QLTours.Controllers
                 .Include(t => t.TourDetails)
                     .ThenInclude(td => td.Hotel)
 
-                .OrderBy(t => t.TourId) // Đảm bảo có thứ tự khi phân trang
-                .Skip((page - 1) * pageSize) // Bỏ qua các phần tử trước trang hiện tại
-                .Take(pageSize) // Lấy số lượng phần tử theo kích thước trang
+                .OrderBy(t => t.TourId)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
 
                 .ToList();
 
-            // Lấy tổng số lượng tour để tính số trang
             var totalTours = _ctx.Tours.Count();
 
-            // Tính số trang
             var totalPages = (int)Math.Ceiling(totalTours / (double)pageSize);
 
-            // Truyền vào ViewBag để hiển thị phân trang
             ViewBag.CurrentPage = page;
             ViewBag.TotalPages = totalPages;
             ViewBag.PageSize = pageSize;
 
-            // Truyền dữ liệu vào ViewBag
             ViewBag.Categories = new SelectList(categories, "CategoryId", "CategoryName");
 
-            return View(tours); // Truyền danh sách tour đã phân trang đến view
+            return View(tours);
         }
 
-        // Thêm action để hiển thị chi tiết tour
 
         public IActionResult Search(int? categoryId, DateTime? startDate, DateTime? endDate, decimal? price, string tourName)
         {
@@ -286,12 +274,12 @@ namespace QLTours.Controllers
             return View(searchedTours);
         }
 
-         // Phương thức GET cho trang liên hệ
-    [HttpGet]
-    public IActionResult SendMessage()
-    {
-        return View();
-    }
+        // Phương thức GET cho trang liên hệ
+        [HttpGet]
+        public IActionResult SendMessage()
+        {
+            return View();
+        }
 
         // Phương thức POST cho form liên hệ
         [HttpPost]
@@ -313,29 +301,29 @@ namespace QLTours.Controllers
 
                     _contactDAO.SaveContactMessage(message);
 
-                    // Lưu thông báo thành công vào ViewBag
                     ViewBag.Message = "Your message has been sent successfully!";
                 }
                 catch (Exception ex)
                 {
-                    // Lưu thông báo lỗi vào ViewBag
                     ViewBag.ErrorMessage = $"Error sending message: {ex.Message}";
                 }
             }
             else
             {
-                // Thông báo khi model không hợp lệ
+
                 ViewBag.ErrorMessage = "Failed to send message. Please try again.";
             }
 
-            
+
             return View("SendMessage");
         }
 
 
-        public IActionResult TourDetail(int id)
+        // 1. Thêm từ khóa async Task<>
+        public async Task<IActionResult> TourDetail(int id)
         {
-            var tour = _ctx.Tours
+            var tour = await _ctx.Tours
+                .AsSplitQuery() // <--- 2. THẦN CHÚ GIÚP TĂNG TỐC ĐỘ (Chỉ có từ EF Core 5.0 trở lên)
                 .Include(t => t.Category)
                 .Include(t => t.TourDetails)
                     .ThenInclude(td => td.Hotel)
@@ -344,29 +332,26 @@ namespace QLTours.Controllers
                 .Include(t => t.Itineraries)
                     .ThenInclude(i => i.DetailItineraries)
                 .Include(t => t.Itineraries)
-                    .ThenInclude(i => i.ItineraryImages)  
+                    .ThenInclude(i => i.ItineraryImages)
                 .Include(t => t.Reviews)
                     .ThenInclude(r => r.User)
-                .FirstOrDefault(t => t.TourId == id);
+                .FirstOrDefaultAsync(t => t.TourId == id); // 3. Dùng FirstOrDefaultAsync
 
             if (tour == null)
             {
                 return NotFound();
             }
 
-            // Tính trung bình sao
+            // Phần tính toán này giữ nguyên (xử lý trên RAM nên rất nhanh)
             double? averageRating = 0.0;
             if (tour.Reviews != null && tour.Reviews.Any())
             {
                 averageRating = tour.Reviews.Average(r => r.Rating);
             }
 
-            // Truyền trung bình sao vào ViewBag để sử dụng trong view
             ViewBag.AverageRating = averageRating;
             return View(tour);
         }
-
-
 
 
         private bool IsValidEmail(string email)
@@ -612,13 +597,7 @@ namespace QLTours.Controllers
 
 
 
-
-
-
-
-
-
-        // Action hiển thị thông tin booking của người dùng
+        // Action hiển thị thông tin đặt vé của người dùng
         public IActionResult BookingDetails()
         {
             // Kiểm tra xem người dùng đã đăng nhập hay chưa

@@ -15,8 +15,7 @@ namespace QLTours.Areas.Employee.Controllers
     public class ItinerariesController : Controller
     {
         private readonly QuanLyTourContext _context;
-        private readonly ImageService _imageService;  // Inject ImageService
-
+        private readonly ImageService _imageService;  
         // Constructor với ImageService
         public ItinerariesController(QuanLyTourContext context, ImageService imageService)
         {
@@ -27,25 +26,20 @@ namespace QLTours.Areas.Employee.Controllers
         // GET: Employee/Itineraries
         public async Task<IActionResult> Index(int pageNumber = 1, int pageSize = 6)
         {
-            // Lấy danh sách lịch trình từ database và bao gồm bảng Tour
             var itineraries = _context.Itineraries.Include(i => i.Tour);
 
-            // Tính tổng số bản ghi
             var totalItineraries = await itineraries.CountAsync();
 
-            // Tính toán số trang
             var totalPages = (int)Math.Ceiling(totalItineraries / (double)pageSize);
 
-            // Lấy dữ liệu cho trang hiện tại
             var pagedItineraries = await itineraries
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
                 .ToListAsync();
 
-            // Truyền thông tin phân trang và tổng số lịch trình sang View
             ViewBag.CurrentPage = pageNumber;
             ViewBag.TotalPages = totalPages;
-            ViewBag.TotalItineraries = totalItineraries; // Tổng số lịch trình
+            ViewBag.TotalItineraries = totalItineraries; 
 
             return View(pagedItineraries);
         }
@@ -85,11 +79,10 @@ namespace QLTours.Areas.Employee.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Save the itinerary data
+
                 _context.Add(itinerary);
                 await _context.SaveChangesAsync();
 
-                // Handle image uploads using ImageService
                 if (images != null && images.Count > 0)
                 {
                     var imagePaths = new List<string>();
@@ -101,7 +94,6 @@ namespace QLTours.Areas.Employee.Controllers
                             var imagePath = await _imageService.SaveImageAsync(image, "images/itinerary");  // Use ImageService
                             imagePaths.Add(imagePath);
 
-                            // Save image info in the ItineraryImages table
                             var itineraryImage = new ItineraryImage
                             {
                                 ItineraryId = itinerary.ItineraryId,

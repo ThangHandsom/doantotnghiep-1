@@ -12,7 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="~/Adminassets/images/logo/favicon.png">
+    <link rel="icon" type="image/png" href="~/DangNhap/images/icons/favicon.ico" />
 
     <!-- page css -->
     <!-- Core css -->
@@ -28,7 +28,7 @@
                 <div class="logo logo-dark">
                     <a href="/admin">
                         <img style="width: 235px;" src="~/Adminassets/images/logo/anhdep.png" alt="Logo">
-                        <img class="logo-fold" src="~/Adminassets/images/logo/logo-fold.png" alt="Logo">
+                        <img class="logo-fold" src="~/DangNhap/images/icons/favicon.ico" alt="Logo">
                     </a>
                 </div>
 
@@ -50,7 +50,7 @@
                         <!-- Dropdown Profile -->
                         <li>
                             <p class="m-b-0 session-username" style="color: #de4436; font-weight: bold; font-size: 16px; ">
-                                @Context.Session.GetString("Username")  <!-- Display username from session -->
+                                @Context.Session.GetString("Username")  <!-- Hiện tên người dùng từ session -->
                             </p>
                         </li>
                         <li class="dropdown dropdown-animated scale-left">
@@ -67,10 +67,10 @@
                                         </div>
                                         <div class="m-l-10">
                                             <p class="m-b-0 session-role" style="color: #de4436; font-weight: bold; font-size: 16px; text-transform: uppercase;">
-                                                @Context.Session.GetString("Role") <!-- Display role from session -->
+                                                @Context.Session.GetString("Role") <!-- Display quyền từ session -->
                                             </p>
                                             <p class="m-b-0 session-username" style="color: #de4436; font-weight: bold; font-size: 16px; ">
-                                                @Context.Session.GetString("Username")  <!-- Display username from session -->
+                                                @Context.Session.GetString("Username")  <!-- Display tên người dùng session -->
                                             </p>
 
                                         </div>

@@ -12,7 +12,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
     <!-- favicon img -->
-    @*   <link rel="shortcut icon" type="image/icon" href="~/logo/favicon.png" />*@
+    <!--<link rel="icon" href="~/Adminassets/images/logo/logovinh.jpg" />-->
 
     <!--font-awesome.min.css-->
     <link rel="stylesheet" href="~/css/font-awesome.min.css" />
@@ -54,8 +54,7 @@
 <body>
     <!-- main-menu Start -->
     <header class="top-area">
-        <div class="header-area" style="    background: rgba(77,78,84,1);
-">
+        <div class="header-area" style="background: rgba(77,78,84,1);">
             <div class="container">
                 <div class="row">
                     <div style="padding-top: 25px" class="col-sm-2">
@@ -63,15 +62,15 @@
                             <a asp-action="Index" asp-controller="Home">
                                 Travel<span> Việt Nam </span>
                             </a>
-                        </div><!-- /.logo-->
-                    </div><!-- /.col-->
+                        </div>
+                    </div>
                     <div class="col-sm-10">
                         <div class="main-menu">
                             <div class="navbar-collapse">
                                 <ul class="nav navbar-right">
                                     <!-- Các mục menu luôn hiển thị -->
                                     <li><a asp-action="Index" asp-controller="Home">Trang chủ</a></li>
-                                    <li><a asp-action="BookingDetails" asp-controller="Home">Vé</a></li>
+                                    <li><a asp-action="BookingDetails" asp-controller="Home">Lịch sử đặt Vé</a></li>
                                     <li><a asp-action="Promotions" asp-controller="Home">Mã Khuyến Mãi</a></li>
                                     <li><a asp-action="SendMessage" asp-controller="Home">Liên Hệ</a></li>
 
@@ -84,39 +83,50 @@
                                         {
                                             if (isGoogleLogin == "true")
                                             {
-                                                // Đăng nhập qua Google, không hiển thị dropdown
+                                            // Đăng nhập qua Google
                                                 <li>
-                                                    <a>@username</a>
+                                                    <a class="nav-link">Xin chào, <strong>@username</strong></a>
                                                 </li>
                                                 <li>
-                                                    <a asp-action="Logout" asp-controller="Home">Đăng xuất</a>
+                                                    <a asp-action="Logout" asp-controller="Home" class="nav-link">
+                                                        <i class="fa fa-sign-out"></i> Đăng xuất
+                                                    </a>
                                                 </li>
                                             }
                                             else
                                             {
-                                            // Đăng nhập bình thường, hiển thị dropdown
-                                                <li class="dropdown">
-                                                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                                        @username <span class="caret"></span>
+                                            // Dropdown Menu Custom
+                                                <li class="dropdown user-menu">
+                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                        <span>Xin chào, @username</span>
                                                     </a>
-                                                    <ul class="dropdown-menu" style="background-color: #ffffff; border: 1px solid #4caf50;">
-                                                        <li><a asp-action="MyProfile" asp-controller="Account" style="color: #000000;">Hồ sơ cá nhân</a></li>
-                                                        <li><a asp-action="ChangePassword" asp-controller="Account" style="color: #000000;">Thay đổi mật khẩu</a></li>
-                                                        <li><a asp-action="Logout" asp-controller="Home" style="color: #000000;">Đăng xuất</a></li>
+                                                    <ul class="dropdown-menu custom-dropdown">
+                                                        <li>
+                                                            <a asp-action="MyProfile" asp-controller="Account">
+                                                                <i class="fa fa-user-circle"></i> Hồ sơ cá nhân
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a asp-action="ChangePassword" asp-controller="Account">
+                                                                <i class="fa fa-key"></i> Thay đổi mật khẩu
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a asp-action="Logout" asp-controller="Home" class="text-danger">
+                                                                <i class="fa fa-sign-out"></i> Đăng xuất
+                                                            </a>
+                                                        </li>
                                                     </ul>
                                                 </li>
-
                                             }
                                         }
                                         else
                                         {
-                                            // Chưa đăng nhập
                                             <li><a asp-action="Login" asp-controller="Home">Đăng nhập</a></li>
                                             <li><a asp-action="Register" asp-controller="Home">Đăng ký</a></li>
                                         }
                                     }
 
-                                    <!-- Nút đặt ngay -->
                                     <li>
                                         <form asp-action="List" asp-controller="Home" method="post">
                                             <button type="submit" class="book-btn">
@@ -128,18 +138,14 @@
                             </div>
                         </div>
                     </div>
-
-
-                </div><!-- /.navbar-collapse -->
-            </div><!-- /.main-menu-->
-        </div><!-- /.col-->
-        </div><!-- /.row -->
-        </div><!-- /.container-->
-        </div><!-- /.header-area -->
-
-    </header><!-- /.top-area-->
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+    </header>
     <!-- main-menu End -->
-
 
     <main>
         @RenderBody()
@@ -150,7 +156,6 @@
         <div class="container">
             <div class="footer-content">
                 <div class="row">
-                    <!-- Logo Section -->
                     <div class="col-sm-3">
                         <div class="single-footer-item">
                             <div class="footer-logo">
@@ -158,19 +163,17 @@
                                     Travel<span> Việt Nam </span>
                                 </a>
                             </div>
-                        </div><!--/.single-footer-item-->
-                    </div><!--/.col-->
-                    <!-- Link Section -->
+                        </div> 
+                    </div> 
                     <div class="col-sm-3">
                         <div class="single-footer-item">
                             <h2>Liên kết</h2>
                             <div class="single-footer-txt">
                                 <p><a href="#">Trang chủ</a></p>
                                 <p><a href="http://localhost:36009/Home/List">Khám phá</a></p>
-                            </div><!--/.single-footer-txt-->
-                        </div><!--/.single-footer-item-->
-                    </div><!--/.col-->
-                    <!-- Contact Section -->
+                            </div> 
+                        </div> 
+                    </div> 
                     <div class="col-sm-3">
                         <div class="single-footer-item text-center">
                             <h2 class="text-left">Liên hệ</h2>
@@ -178,11 +181,11 @@
                                 <p>+0385537242</p>
                                 <p style="text-transform: initial;" class="foot-email">Email: thangnguyentrong212002@gmail.com</p>
                                 <p>Khối 9, Trường Vinh, Nghệ An</p>
-                            </div><!--/.single-footer-txt-->
-                        </div><!--/.single-footer-item-->
-                    </div><!--/.col-->
-                </div><!--/.row-->
-            </div><!--/.footer-content-->
+                            </div> 
+                        </div> 
+                    </div> 
+                </div> 
+            </div>
 
             <hr>
 
@@ -193,7 +196,7 @@
                     <li><a href="#" target="_blank" class="foot-icon-bg-2"><i class="fa fa-twitter"></i></a></li>
                     <li><a href="#" target="_blank" class="foot-icon-bg-3"><i class="fa fa-instagram"></i></a></li>
                 </ul>
-            </div><!--/.foot-icons-->
+            </div>
             <!-- Messenger and Zalo Icons -->
             <a href="https://id.zalo.me/account?continue=http%3A%2F%2Fzalo%2Eme%2F0123456789" target="_blank" class="messenger-icon">
                 <img src="~/images/zalo.png" alt="Zalo Icon">
@@ -202,26 +205,102 @@
             <!-- Scroll to Top Icon -->
             <div id="scroll-Top">
                 <i class="fa fa-angle-double-up return-to-top" id="scroll-top" data-toggle="tooltip" data-placement="top" title="Back to Top" aria-hidden="true"></i>
-            </div><!--/.scroll-Top-->
-        </div><!-- /.container-->
-
-    </footer><!-- /.footer-copyright-->
+            </div>
+        </div>
+    </footer>
     <style>
+    
+        .navbar-nav > li.user-menu > a {
+            background-color: transparent !important; 
+            color: #fff !important; 
+            font-weight: 500;
+        }
+
+            .navbar-nav > li.user-menu > a:hover,
+            .navbar-nav > li.user-menu.open > a {
+                background-color: rgba(255, 255, 255, 0.1) !important; 
+            }
+
+        .custom-dropdown {
+            background-color: #ffffff !important; 
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+            padding: 8px 0; 
+            margin-top: 12px;
+            min-width: 220px;
+        }
+
+            .custom-dropdown::before {
+                content: '';
+                position: absolute;
+                top: -6px;
+                right: 20px;
+                width: 12px;
+                height: 12px;
+                background: #ffffff; 
+                transform: rotate(45deg);
+                border-top: 1px solid rgba(0,0,0,0.05); 
+                border-left: 1px solid rgba(0,0,0,0.05);
+            }
+
+            .custom-dropdown li a {
+                color: #333333 !important;
+                padding: 10px 20px; 
+                font-size: 14px;
+                font-weight: 500;
+                display: flex; 
+                align-items: center;
+                text-decoration: none;
+                transition: all 0.2s;
+            }
+                .custom-dropdown li a i {
+                    width: 24px; 
+                    text-align: center;
+                    margin-right: 10px;
+                    color: #666; 
+                }
+
+                .custom-dropdown li a:hover {
+                    background-color: #f5f5f5; 
+                    color: #00bcd4 !important; 
+                }
+
+                    .custom-dropdown li a:hover i {
+                        color: #00bcd4;
+                    }
+
+
+            .custom-dropdown li a.text-danger {
+                color: #e74c3c !important;
+            }
+
+                .custom-dropdown li a.text-danger i {
+                    color: #e74c3c !important;
+                }
+
+
+                .custom-dropdown li a.text-danger:hover {
+                    background-color: #f5f5f5 !important; 
+                    color: #c0392b !important; 
+                }
         footer {
             width: 100%;
             background: #f5f5f5;
             padding: 30px 0;
     </style>
 
-
-    <!--ChatbotStart-->
+    <!--Chatbot-->
     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
     <df-messenger intent="WELCOME"
-                  chat-title="Tư vấn Tour với trợ lý AI"
+                  chat-title="Chatbot"
                   agent-id="450ceda6-79aa-402c-bccb-20d01def939d"
                   language-code="vi"></df-messenger>
     <!--ChatbotEnd-->
-    <!-- footer-copyright end -->
+  
+
+
+
 
     <script src="~/js/jquery.js"></script>
     <!--modernizr.min.js-->

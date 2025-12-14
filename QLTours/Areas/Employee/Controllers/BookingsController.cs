@@ -24,27 +24,23 @@ namespace QLTours.Areas.Employee.Controllers
 
         public async Task<IActionResult> Index(int pageNumber = 1, int pageSize = 8)
         {
-            // Lấy danh sách đặt tour từ database và bao gồm các bảng Tour, User
             var bookings = _context.Bookings
                 .Include(b => b.Tour)
                 .Include(b => b.User)
+                .OrderByDescending(b => b.BookingDate) 
                 .AsQueryable();
 
-            // Tính tổng số bản ghi và số trang
             var totalBookings = await bookings.CountAsync();
             var totalPages = (int)Math.Ceiling(totalBookings / (double)pageSize);
 
-            // Lấy dữ liệu cho trang hiện tại
             var pagedBookings = await bookings
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
                 .ToListAsync();
 
-            // Truyền thông tin phân trang
+            ViewBag.PageSize = pageSize;
             ViewBag.CurrentPage = pageNumber;
             ViewBag.TotalPages = totalPages;
-
-            // Truyền tổng số booking
             ViewBag.TotalBookings = totalBookings;
 
             return View(pagedBookings);
@@ -108,7 +104,6 @@ namespace QLTours.Areas.Employee.Controllers
                 return NotFound();
             }
 
-            // Sử dụng TourName và Username thay vì TourId và UserId
             ViewData["TourId"] = new SelectList(_context.Tours, "TourId", "TourName", booking.TourId);
             ViewData["UserId"] = new SelectList(_context.Users, "UserId", "Username", booking.UserId);
 

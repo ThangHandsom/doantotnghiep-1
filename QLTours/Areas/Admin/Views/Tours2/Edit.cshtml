@@ -29,7 +29,11 @@
 
                 <div class="mb-3">
                     <label asp-for="Price" class="form-label">Giá (VND)</label>
-                    <input asp-for="Price" class="form-control" />
+                    <input asp-for="Price"
+                           class="form-control"
+                           type="number"
+                           asp-format="{0:0}" />
+
                     <span asp-validation-for="Price" class="text-danger"></span>
                 </div>
 

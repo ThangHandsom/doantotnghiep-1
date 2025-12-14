@@ -2,7 +2,7 @@
 <style>
     /* CSS */
     .yellow-star {
-        color: #f8ce0b; /* Màu sắc mong muốn cho ngôi sao */
+        color: #f8ce0b; 
     }
 
     .travel-box {
@@ -10,15 +10,15 @@
     }
 
     .single-package-item img {
-        width: 100%; /* Chiều rộng đầy đủ của container */
-        height: 200px; /* Đặt chiều cao cố định cho ảnh */
-        object-fit: cover; /* Giúp hình ảnh phù hợp với khung mà không bị méo */
-        border-radius: 20px; /* Tùy chọn: bo tròn góc */
-        margin-bottom: 15px; /* Khoảng cách giữa ảnh và nội dung dưới */
+        width: 100%; 
+        height: 200px; 
+        object-fit: cover; 
+        border-radius: 20px; 
+        margin-bottom: 15px; 
     }
 
     .single-package-item {
-        text-align: center; /* Căn giữa nội dung */
+        text-align: center;
     }
 
     .pagination li {
@@ -40,7 +40,7 @@
     .pagination .disabled span {
         color: #aaa;
     }
-
+    /* style phần phân */
     .minimal-pagination {
         display: flex;
         justify-content: center;
@@ -89,34 +89,67 @@
         .page-arrow:hover {
             transform: translateX(2px);
         }
+    .minimal-pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px; 
+        margin-top: 20px;
+    }
 
+        .minimal-pagination a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 36px;
+            height: 36px; 
+            border-radius: 50%;
+        }
 
-
+            .minimal-pagination a:not(.active):not(.disabled):hover {
+                background-color: #f0f0f0; 
+                color: #000;
+            }
+    .page-number.active {
+        background-color: #4facfe;
+        color: white;
+        font-weight: bold;
+        pointer-events: none; 
+    }
+    .page-arrow.disabled {
+        color: #ccc;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+    .page-arrow {
+        font-size: 20px;
+        line-height: 1;
+        padding-bottom: 3px; 
+    }
 </style>
 <section class="travel-box">
     <div class="container">
-
         <div class="row">
             <div class="col-md-12">
                 <div class="single-travel-boxes" style="margin-top: 150px !important;">
-
                     <div class="gallary-header text-center">
                         <h2>
-                            Tìm Nhanh
+                            Tìm kiếm chuyến đi bạn muốn
                         </h2>
                     </div>
                     <div id="desc-tabs" class="desc-tabs">
-
                         <ul class="nav nav-tabs" role="tablist">
-
                             <li role="presentation" class="active">
                                 <a href="#tours" aria-controls="tours" role="tab" data-toggle="tab">
                                     <i class="fa fa-tree"></i>
-                                    Chuyến du lịch
+                                    Những chuyến đi thú vị
                                 </a>
                             </li>
                         </ul>
-
                         <!-- Tab panes -->
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active fade-in" id="tours">
@@ -132,7 +165,7 @@
 
                                             <div class="col-lg-2  col-sm-4">
                                                 <div class="single-tab-select-box">
-                                                    <h2>Check in</h2>
+                                                    <h2>Ngày đi </h2>
                                                     <div class="travel-check-icon">
                                                         <input type="date" name="startDate" class="form-control" placeholder="Ngày bắt đầu">
                                                     </div>
@@ -141,7 +174,7 @@
 
                                             <div class="col-lg-2 col-sm-4">
                                                 <div class="single-tab-select-box">
-                                                    <h2>Check out</h2>
+                                                    <h2>Ngày về</h2>
                                                     <div class="travel-check-icon">
                                                         <input type="date" name="endDate" class="form-control" placeholder="Ngày kết thúc">
                                                     </div>
@@ -166,7 +199,6 @@
                                                     </select>
                                                 </div>
                                             </div>
-
                                             <div class="col-lg-3  col-sm-4">
                                                 <div class="about-btn  pull-right">
                                                     <button class="about-view travel-btn">Tìm kiếm</button>
@@ -174,15 +206,15 @@
                                             </div>
                                         </div>
                                     </form>
-                                </div><!--/.tab-para-->
-                            </div><!--/.tabpannel-->
-                        </div><!--/.tab content-->
-                    </div><!--/.desc-tabs-->
-                </div><!--/.single-travel-box-->
-            </div><!--/.col-->
-        </div><!--/.row-->
-    </div><!--/.container-->
-</section><!--/.travel-box-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <!--travel-box end-->
 <!--packages start-->
 <section id="pack" class="packages">
@@ -235,8 +267,6 @@
                             </div>
                         </div>
                     </div>
-
-
                 }
             </div>
         </div>
@@ -273,9 +303,14 @@
 
 
         <!-- Thêm phần hiển thị phân trang -->
-
+       
     </div>
 </section>
+
+
+
+
+
 <!--packages end-->
 @functions {
     string GetStarIcons(double rating)

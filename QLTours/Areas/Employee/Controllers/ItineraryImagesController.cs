@@ -22,25 +22,20 @@ namespace QLTours.Areas.Employee.Controllers
 
         public async Task<IActionResult> Index(int pageNumber = 1, int pageSize = 5)
         {
-            // Lấy danh sách hình ảnh lịch trình
             var itineraryImages = _context.ItineraryImages;
 
-            // Tính tổng số hình ảnh
             var totalImages = await itineraryImages.CountAsync();
 
-            // Tính số trang
             var totalPages = (int)Math.Ceiling(totalImages / (double)pageSize);
 
-            // Lấy dữ liệu cho trang hiện tại
             var pagedItineraryImages = await itineraryImages
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
                 .ToListAsync();
 
-            // Truyền thông tin phân trang sang View
             ViewBag.CurrentPage = pageNumber;
             ViewBag.TotalPages = totalPages;
-            ViewBag.TotalImages = totalImages; // Tổng số hình ảnh
+            ViewBag.TotalImages = totalImages; 
 
             return View(pagedItineraryImages);
         }
@@ -83,7 +78,6 @@ namespace QLTours.Areas.Employee.Controllers
             {
                 if (newImage != null && newImage.Length > 0)
                 {
-                    // Lưu ảnh mới và xóa ảnh cũ
                     var imagePath = await _imageService.SaveImageAsync(newImage, "itinerary-images", itineraryImage.ImagePath);
                     itineraryImage.ImagePath = imagePath;
                 }
@@ -95,9 +89,8 @@ namespace QLTours.Areas.Employee.Controllers
             }
             catch (Exception ex)
             {
-                // Log lỗi nếu cần thiết
                 ModelState.AddModelError(string.Empty, "Lỗi xảy ra khi cập nhật ảnh. Vui lòng thử lại.");
-                return View(itineraryImage); // Quay lại trang Edit
+                return View(itineraryImage); 
             }
         }
 

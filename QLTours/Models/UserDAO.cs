@@ -67,7 +67,7 @@
                 throw new Exception("User not found.");
             }
 
-            // Mã hóa mật khẩu mới bằng BCrypt
+            // Mã hóa mật khẩu mới 
             string hashedPassword = BCrypt.Net.BCrypt.HashPassword(newPassword);
 
             // Cập nhật mật khẩu đã mã hóa
@@ -75,12 +75,10 @@
 
             try
             {
-                // Lưu thay đổi vào cơ sở dữ liệu
                 _context.SaveChanges();
             }
             catch (Exception ex)
             {
-                // Xử lý lỗi khi lưu vào cơ sở dữ liệu
                 throw new Exception($"Error saving to database: {ex.Message}");
             }
         }

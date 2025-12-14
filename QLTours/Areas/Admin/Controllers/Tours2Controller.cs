@@ -16,7 +16,6 @@ namespace QLTours.Areas.Employee.Controllers
         private readonly QuanLyTourContext _context;
         private readonly ImageTourService _imageTourService; 
 
-        // Sửa constructor để tiêm ImageTourService
         public Tours2Controller(QuanLyTourContext context, ImageTourService imageTourService)
         {
             _context = context;
@@ -29,26 +28,20 @@ namespace QLTours.Areas.Employee.Controllers
             var tours = from t in _context.Tours.Include(t => t.Category)
                         select t;
 
-            // Kiểm tra nếu có từ khóa tìm kiếm
             if (!string.IsNullOrEmpty(search))
             {
-                // Dùng EF.Functions.Like để tìm kiếm trong SQL
                 tours = tours.Where(t => EF.Functions.Like(t.TourName, search + "%"));
             }
 
-            // Tính tổng số bản ghi
             var totalTours = await tours.CountAsync();
 
-            // Tính số trang
             var totalPages = (int)Math.Ceiling(totalTours / (double)pageSize);
 
-            // Lấy dữ liệu cho trang hiện tại
             var pagedTours = await tours
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
                 .ToListAsync();
 
-            // Truyền thông tin phân trang qua ViewBag
             ViewBag.CurrentPage = pageNumber;
             ViewBag.TotalPages = totalPages;
             ViewBag.TotalTours = totalTours;
@@ -91,10 +84,9 @@ namespace QLTours.Areas.Employee.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Kiểm tra và lưu hình ảnh nếu có
                 if (img != null && img.Length > 0)
                 {
-                    tour.Img = await _imageTourService.SaveImageAsync(img); // Lưu ảnh và gán đường dẫn
+                    tour.Img = await _imageTourService.SaveImageAsync(img); 
                 }
 
                 _context.Add(tour);
@@ -137,10 +129,8 @@ namespace QLTours.Areas.Employee.Controllers
             {
                 try
                 {
-                    // Kiểm tra và lưu hình ảnh nếu có
                     if (img != null && img.Length > 0)
                     {
-                        // Nếu có ảnh mới, cập nhật lại hình ảnh
                         tour.Img = await _imageTourService.SaveImageAsync(img);
                     }
 
@@ -201,7 +191,6 @@ namespace QLTours.Areas.Employee.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
         private bool TourExists(int id)
         {
             return (_context.Tours?.Any(e => e.TourId == id)).GetValueOrDefault();

@@ -9,7 +9,6 @@ namespace QLTours.Services
         Task SendEmailAsync(string email, string subject, string htmlMessage);
     }
 
-    // Thực thi giao diện IEmailSender với SmtpEmailSender
     public class SmtpEmailSender : IEmailSender
     {
         private readonly string smtpHost;
@@ -31,7 +30,7 @@ namespace QLTours.Services
             {
                 client.UseDefaultCredentials = false;
                 client.Credentials = new NetworkCredential(smtpUsername, smtpPassword);
-                client.EnableSsl = true; // Yêu cầu SSL để gửi email an toàn
+                client.EnableSsl = true; 
                 client.DeliveryMethod = SmtpDeliveryMethod.Network;
 
                 var mailMessage = new MailMessage
@@ -49,7 +48,6 @@ namespace QLTours.Services
                 }
                 catch (Exception ex)
                 {
-                    // Xử lý lỗi khi gửi email
                     throw ex;
                 }
             }

@@ -99,7 +99,7 @@
     }
 
     .yellow-star {
-        color: #f8ce0b; /* Màu sắc mong muốn cho ngôi sao */
+        color: #f8ce0b; 
     }
 
     .rating input {
@@ -204,16 +204,16 @@
                     <h2> @String.Format("{0:N0}₫", Model.Price)</h2>
                     <ul class="list">
                         <li>
-                            <a href="#"><i class="fa-solid fa-calendar-days"></i> <span>Ngày bắt đầu</span> : @Model.StartDate.ToString("dd/MM/yyyy")</a>
+                           <i class="fa-solid fa-calendar-days"></i> <span>Ngày bắt đầu</span> : @Model.StartDate.ToString("dd/MM/yyyy")
                         </li>
                         <li>
-                            <a href="#"><i class="fa-solid fa-calendar-days"></i> <span>Ngày kết thúc</span> : @Model.EndDate.ToString("dd/MM/yyyy")</a>
+                           <i class="fa-solid fa-calendar-days"></i> <span>Ngày kết thúc</span> : @Model.EndDate.ToString("dd/MM/yyyy")
                         </li>
                         <li>
-                            <a href="#"> <span>Khách sạn</span> : @Model.TourDetails.FirstOrDefault()?.Hotel?.HotelName</a>
+                            <span>Khách sạn</span> : @Model.TourDetails.FirstOrDefault()?.Hotel?.HotelName
                         </li>
                         <li>
-                            <a href="#"> <span>Phương tiện</span> : @Model.TourDetails.FirstOrDefault()?.Vehicle?.VehicleName</a>
+                            <span>Phương tiện</span> : @Model.TourDetails.FirstOrDefault()?.Vehicle?.VehicleName
                         </li>
 
                     </ul>
@@ -222,8 +222,7 @@
                         @Model.Description
                     </p>
                     <form action="@Url.Action("BookTour","Home", new { id = Model.TourId })">
-
-                        <button type="submit" style="padding:0; border:none;border-radius:10px">
+                        <button type="submit" style="padding:5px; border:none;border-radius:10px">
                             <a class="main_btn text-light">Đặt ngay</a>
                         </button>
                     </form>
@@ -237,7 +236,6 @@
     <div class="itinerary">
         <div class="container">
             <h2 class=" text-center text-danger mb-4 fw-bold">Lịch trình</h2>
-
             @foreach (var itinerary in Model.Itineraries)
             {
                 <div class="card mb-3">

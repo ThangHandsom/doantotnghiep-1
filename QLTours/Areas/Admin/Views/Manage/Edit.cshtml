@@ -13,21 +13,17 @@
         <div class="card-body">
             <form asp-action="Edit" method="post">
                 <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
-
                 <input type="hidden" asp-for="IdMng" />
-
                 <div class="mb-3">
                     <label asp-for="Username" class="form-label">Tên Đăng Nhập</label>
                     <input asp-for="Username" class="form-control" />
                     <span asp-validation-for="Username" class="text-danger"></span>
                 </div>
-
                 <div class="mb-3">
                     <label asp-for="Password" class="form-label">Mật Khẩu</label>
                     <input asp-for="Password" type="password" class="form-control" />
                     <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
-
                 <div class="mb-3">
                     <label asp-for="Role" class="form-label">Vai Trò</label>
                     <select asp-for="Role" class="form-select">
@@ -36,7 +32,6 @@
                     </select>
                     <span asp-validation-for="Role" class="text-danger"></span>
                 </div>
-
                 <div class="mb-3">
                     <label asp-for="Status" class="form-label">Trạng Thái</label>
                     <select asp-for="Status" class="form-select">
@@ -45,7 +40,6 @@
                     </select>
                     <span asp-validation-for="Status" class="text-danger"></span>
                 </div>
-
                 <div class="text-center">
                     <button type="submit" class="btn btn-success">
                         <i class="bi bi-save"></i> Lưu Thay Đổi

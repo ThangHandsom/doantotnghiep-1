@@ -21,9 +21,8 @@ namespace QLTours.Areas.Employee.Controllers
         }
         public IActionResult Logout()
         {
-            HttpContext.SignOutAsync(); // Đăng xuất người dùng
+            HttpContext.SignOutAsync();
 
-            // Chuyển hướng đến trang chủ 
             return RedirectToAction("Index", "Home", new { area = "" });
         }
     }
